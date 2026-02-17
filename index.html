@@ -1,0 +1,851 @@
+<!--
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣤⣄⡀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡸⠋⠀⠘⣇⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠇⠀⠀⠀⢸⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡜⠀⠀⠀⠀⢸⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠇⠀⠀⠀⠀⢸⠇⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡎⠀⠀⠀⠀⠀⢸⠀⠀⠀
+⠀⠀⢀⣀⣀⣀⠀⠀⠀⠀⠀⢀⣀⣤⡤⠤⠤⠤⠤⢤⣤⣀⡤⢖⡿⠛⠉⢳⠀⠀⠀⢸⠀⠀⠀
+⠀⢼⠁⠉⠉⠛⠻⢭⡓⠒⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⣏⠀⠀⠀⢸⠀⠀⠀⠀⠀⡤⠀⠀⠀
+⠀⠸⡄⠀⠀⠀⠀⢸⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠂⠀⠀⡜⠀⠀⠀⠀⢀⡇⠀⠀⠀   HTML HECHO POR JORMAN TORRES PERTUZ
+⠀⠀⢷⠀⠀⠀⠠⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢣⢠⠏⠀⠀⠀⠀⢸⠃⠀⠀⠀   
+⠀⠀⠈⢧⠀⢀⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡞⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀          TRABAJO DE PROYECTO INTEGRADOR WEB
+⠀⠀⠀⠈⢳⡈⠁⠀⠀⠀⠀⠀⣀⡀⠀⠀⠀⠀⠀⠀⠀⣶⣶⣦⠀⠀⢹⠀⠀⠀⠀⠀⡎⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⢠⣾⣟⣹⡄⠀⠀⠀⠀⡀⠀⣿⣿⣿⡇⠀⢈⣧⠤⠤⠶⠶⢷⠒⠒⠂⠀       WEBZINE - WEB MAGAZINE - REVISTA WEB
+⠀⠀⢀⣀⣠⡧⠄⠀⠀⠀⣾⣿⣿⣿⠇⠀⠀⠀⠙⠁⠀⠙⠻⠿⠃⠀⠨⣼⣤⣀⡀⠀⠈⢧⠀⠀⠀
+⠘⠉⠁⠀⢸⣤⡤⠀⠀⠀⠛⢿⡿⠋⠀⠀⠀⠀⠴⠦⠀⠀⠀⠀⠀⠐⣲⣯⡀⠀⠈⠙⠓⠺⣧⣄⡀
+⠀⣀⡤⠚⠉⢳⡴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡼⠃⠀⠈⠓⢦⡀⠀⠀⢸⠀⠈
+⠀⠁⠀⢀⡔⠉⠙⡶⢄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠴⠚⠁⠀⠀⠀⠀⠀⠀⠈⠓⠆⠀⡇⠀
+⠀⠀⠰⠋⠀⠀⢸⡇⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠁⠀
+⠀⠀⠀⠀⠀⠀⠈⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡎⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠹⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠙⢆⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠄⠀⢰⠇⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠶⠺⣇⠀⣀⡜⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢱⡄⠀⠀⠀⠹⡟⠒⢢⡀⠀⠀⠀⠀⢀⡏⠀⠀⠀⠈⠉⠉⠁⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣄⠀⠀⢀⡇⠀⠀⠻⣄⠀⠀⠀⡸⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢷⠶⠋⠀⠀⠀⠀⠈⣣⠶⠖⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Webzine de música latina - Bad Bunny, Feid, Young Miko y más">
+    <title>Música Latina - Webzine</title>
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!--                                 
+▄▄▄▄▄▄▄                             ▄▄       
+███▀▀███▄              ██           ██       
+███▄▄███▀ ▄███▄ ████▄ ▀██▀▀ ▀▀█▄ ▄████  ▀▀█▄ 
+███▀▀▀▀   ██ ██ ██ ▀▀  ██  ▄█▀██ ██ ██ ▄█▀██ 
+███       ▀███▀ ██     ██  ▀█▄██ ▀████ ▀█▄██                                       
+-->
+
+<!-- 
+=============================================
+SECCIÓN: PORTADA
+============================================= 
+-->
+<header id="portada">
+    <figure>
+        <img src="img/LATINA.png" alt="Portada de la revista web - Música Latina" loading="eager">
+    </figure>
+</header>
+
+<!-- 
+=============================================
+CONTENIDO PRINCIPAL
+============================================= 
+-->
+<main> 
+
+    <!-- 
+    =========================================
+    SECCIÓN: ÍNDICE
+    ========================================= 
+    -->
+    <section id="Indice" aria-label="Índice de contenidos">
+        <header>
+            <h2>Índice</h2>
+            <span aria-hidden="true">0</span>
+        </header>
+        
+        <nav aria-label="Navegación principal">   
+            <ul>
+                <!-- Enlace a artículo de Bad Bunny -->
+                <li>
+                    <a href="#bad-bunny">
+                        Bad Bunny <span aria-hidden="true">1</span>
+                    </a>
+                </li>
+
+                <!-- Enlace a sección de Álbumes -->
+                <li>
+                    <a href="#albumes">
+                        Álbumes <span aria-hidden="true">2</span>
+                    </a>
+                </li>
+
+                <!-- Enlace a artículo de Feid -->
+                <li>
+                    <a href="#feid">
+                        Feid <span aria-hidden="true">3</span> 
+                    </a>
+                </li>
+
+                <!-- Enlace a galería de fotos -->
+                <li>
+                    <a href="#galeria">
+                        Galería <span aria-hidden="true">4</span>
+                    </a>
+                </li>
+
+                <!-- Enlace a artículo de Young Miko -->
+                <li>
+                    <a href="#young-miko">
+                        Young Miko <span aria-hidden="true">5</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+
+    
+    <!--
+                                                          
+▄▄▄▄▄▄▄            ▄▄   ▄▄▄▄▄▄▄                           
+███▀▀███▄          ██   ███▀▀███▄                         
+███▄▄███▀  ▀▀█▄ ▄████   ███▄▄███▀ ██ ██ ████▄ ████▄ ██ ██ 
+███  ███▄ ▄█▀██ ██ ██   ███  ███▄ ██ ██ ██ ██ ██ ██ ██▄██ 
+████████▀ ▀█▄██ ▀████   ████████▀ ▀██▀█ ██ ██ ██ ██  ▀██▀ 
+                                                      ██  
+                                                    ▀▀▀   
+    -->
+    
+    <!-- 
+    =========================================
+    ARTÍCULO 1: BAD BUNNY
+    ========================================= 
+    -->
+    <article id="bad-bunny">
+        <header>
+            <h2>Bad Bunny</h2>
+            <span aria-hidden="true">1</span>
+        </header>
+
+        <section>
+            <h3>Bad Bunny: Debí tirar más fotos</h3>
+            <p>El álbum Debí tirar más fotos, lanzado en enero de 2025, marcó un antes y un después en la carrera de Bad Bunny. Con una mezcla de reguetón, house y ritmos tradicionales puertorriqueños, el artista construye un puente entre la memoria personal y la identidad colectiva. Cada canción es un recordatorio de que la cultura latina no solo se vive en Puerto Rico, sino que se expande por todo el mundo.</p>
+            
+            <h4>Identidad latina y orgullo cultural</h4>
+            <p>Más allá de la música, Bad Bunny se ha convertido en un símbolo de resistencia y representación. Debí tirar más fotos no es solo un álbum: es una declaración de identidad. Sus letras hablan de la gentrificación, de la importancia de preservar la memoria y de la fuerza de la comunidad latina. En 2026, este mensaje fue reconocido globalmente cuando el disco ganó el Grammy a Álbum del Año, siendo el primero completamente en español en lograrlo. Con ello, Bad Bunny reafirma que la música latina no necesita traducción para ser universal.</p>        
+        </section>
+
+        <figure class="badbunny-fotos">
+            <img src="img/badbunny2.png" 
+                 alt="Bad Bunny en SNL50: The Homecoming Concert, febrero 2025" 
+                 loading="lazy">
+        </figure>
+
+        <aside class="datos" aria-label="Datos de Bad Bunny">
+            <h2>Datos</h2>
+            
+            <!-- Dato 1: Nombre real -->
+            <div>
+                <h3 aria-hidden="true">1</h3>
+                <p class="datos-bold">Nombre:</p>
+                <p>Benito Antonio Martínez Ocasio</p>
+            </div>
+            
+            <!-- Dato 2: Nacionalidad -->
+            <div>
+                <h3 aria-hidden="true">2</h3>
+                <p class="datos-bold">Nacionalidad:</p>
+                <p>Puertorriqueña</p>
+            </div>
+            
+            <!-- Dato 3: Fecha de nacimiento -->
+            <div>
+                <h3 aria-hidden="true">3</h3>
+                <p class="datos-bold">Nacimiento:</p>
+                <p>10 de marzo de 1994</p>
+            </div>
+            
+            <!-- Dato 4: Último álbum -->
+            <div>
+                <h3 aria-hidden="true">4</h3>
+                <p class="datos-bold">Último álbum:</p>
+                <p>Debí tirar más fotos (2025)</p>
+            </div>
+            
+            <!-- Dato 5: Premios -->
+            <div>
+                <h3 aria-hidden="true">5</h3>
+                <p class="datos-bold">Premios:</p>
+                <p>Ganador de 3 premios Grammy en 2026, incluyendo Álbum del Año, Mejor Álbum de Música Urbana y Mejor Interpretación de Música Global</p>
+            </div>
+        </aside>
+    </article>
+
+    <!--
+                                             
+  ▄▄▄▄   ▄▄ ▄▄                               
+▄██▀▀██▄ ██ ██                               
+███  ███ ██ ████▄ ██ ██ ███▄███▄ ▄█▀█▄ ▄█▀▀▀ 
+███▀▀███ ██ ██ ██ ██ ██ ██ ██ ██ ██▄█▀ ▀███▄ 
+███  ███ ██ ████▀ ▀██▀█ ██ ██ ██ ▀█▄▄▄ ▄▄▄█▀ 
+    -->
+
+    <!-- 
+    =========================================
+    ARTÍCULO 2: ÁLBUMES
+    ========================================= 
+    -->
+    <article id="albumes">
+        <header>
+            <h2>Álbumes</h2>
+            <span aria-hidden="true">2</span>
+        </header>
+
+        <button class="carousel-arrow carousel-arrow-left" 
+                aria-label="Ver álbumes anteriores"
+                type="button">
+            ‹
+        </button>
+        <button class="carousel-arrow carousel-arrow-right" 
+                aria-label="Ver álbumes siguientes"
+                type="button">
+            ›
+        </button>
+
+        <section class="albums-viewport" role="region" aria-label="Carrusel de álbumes">
+            <div class="albums-track">
+                
+                <!-- 
+                =====================================
+                TARJETA DE ÁLBUM 1
+                ===================================== 
+                -->
+                <article class="album">
+                    <!-- Enlace a Apple Music - Se abre en nueva pestaña -->
+                    <a href="#"
+                       onclick="window.open(
+                       'https://music.apple.com/co/album/un-verano-sin-ti/1622045624',
+                       'AppleMusic',
+                       'width=900,height=600'
+                       ); return false;">
+                        
+                        <!-- Portada del álbum -->
+                        <figure class="album-cover">
+                            <img src="img/uvst.jpg"
+                                 alt="Portada del álbum Un Verano Sin Ti de Bad Bunny"
+                                 loading="lazy">
+                        </figure>
+                        
+                        <!-- Información del álbum -->
+                        <div class="album-info">
+                            <h3 class="album-title">Un Verano Sin Ti</h3>
+                            <p class="album-artist">Bad Bunny</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- 
+                =====================================
+                TARJETA DE ÁLBUM 2
+                FERXXOCALIPSIS - Feid
+                ===================================== 
+                -->
+                <article class="album">
+                    <a href="#"
+                       onclick="window.open(
+                       'https://music.apple.com/co/album/ferxxocalipsis/1719169996',
+                       'AppleMusic',
+                       'width=900,height=600'
+                       ); return false;">
+                        
+                        <figure class="album-cover">
+                            <img src="img/FCALIPSIS.jpg"
+                                 alt="Portada del álbum Ferxxocalipsis de Feid"
+                                 loading="lazy">
+                        </figure>
+                        
+                        <div class="album-info">
+                            <h3 class="album-title">FERXXOCALIPSIS</h3>
+                            <p class="album-artist">Feid</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- 
+                =====================================
+                TARJETA DE ÁLBUM 3
+                att. - Young Miko
+                ===================================== 
+                -->
+                <article class="album">
+                    <a href="#"
+                       onclick="window.open(
+                       'https://music.apple.com/co/album/att-apple-music-edition/1734324964',
+                       'AppleMusic',
+                       'width=900,height=600'
+                       ); return false;">
+                        
+                        <figure class="album-cover">
+                            <img src="img/ymk.jpg"
+                                 alt="Portada del álbum att. de Young Miko"
+                                 loading="lazy">
+                        </figure>
+                        
+                        <div class="album-info">
+                            <h3 class="album-title">att.</h3>
+                            <p class="album-artist">Young Miko</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- 
+                =====================================
+                TARJETA DE ÁLBUM 4
+                DeBí TiRAR Más FOToS - Bad Bunny
+                ===================================== 
+                -->
+                <article class="album">
+                    <a href="#"
+                       onclick="window.open(
+                       'https://music.apple.com/co/album/deb%C3%AD-tirar-m%C3%A1s-fotos/1787022393',
+                       'AppleMusic',
+                       'width=900,height=600'
+                       ); return false;">
+                        
+                        <figure class="album-cover">
+                            <img src="img/dtmf.jpg"
+                                 alt="Portada del álbum DeBí TiRAR Más FOToS de Bad Bunny"
+                                 loading="lazy">
+                        </figure>
+                        
+                        <div class="album-info">
+                            <h3 class="album-title">DeBí TiRAR Más FOToS</h3>
+                            <p class="album-artist">Bad Bunny</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- 
+                =====================================
+                TARJETA DE ÁLBUM 5
+                Nadie Sabe Lo Que Va a Pasar Mañana
+                ===================================== 
+                -->
+                <article class="album">
+                    <a href="#"
+                       onclick="window.open(
+                       'https://music.apple.com/co/album/nadie-sabe-lo-que-va-a-pasar-ma%C3%B1ana/1710982865',
+                       'AppleMusic',
+                       'width=900,height=600'
+                       ); return false;">
+                        
+                        <figure class="album-cover">
+                            <img src="img/nslqvapm.jpg"
+                                 alt="Portada del álbum Nadie Sabe Lo Que Va a Pasar Mañana de Bad Bunny"
+                                 loading="lazy">
+                        </figure>
+                        
+                        <div class="album-info">
+                            <h3 class="album-title">Nadie Sabe Lo Que Va a Pasar Mañana</h3>
+                            <p class="album-artist">Bad Bunny</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- 
+                =====================================
+                TARJETA DE ÁLBUM 6
+                El Último Tour Del Mundo
+                ===================================== 
+                -->
+                <article class="album">
+                    <a href="#"
+                       onclick="window.open(
+                       'https://music.apple.com/co/album/el-%C3%BAltimo-tour-del-mundo/1542102907',
+                       'AppleMusic',
+                       'width=900,height=600'
+                       ); return false;">
+                        
+                        <figure class="album-cover">
+                            <img src="img/utdm.jpg"
+                                 alt="Portada del álbum El Último Tour Del Mundo de Bad Bunny"
+                                 loading="lazy">
+                        </figure>
+                        
+                        <div class="album-info">
+                            <h3 class="album-title">El Último Tour Del Mundo</h3>
+                            <p class="album-artist">Bad Bunny</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- 
+                =====================================
+                TARJETA DE ÁLBUM 7
+                MOR, No Le Temas a la Oscuridad
+                ===================================== 
+                -->
+                <article class="album">
+                    <a href="#"
+                       onclick="window.open(
+                       'https://music.apple.com/co/album/mor-no-le-temas-a-la-oscuridad/1710468050',
+                       'AppleMusic',
+                       'width=900,height=600'
+                       ); return false;">
+                        
+                        <figure class="album-cover">
+                            <img src="img/mnltalo.jpg"
+                                 alt="Portada del álbum MOR, No Le Temas a la Oscuridad de Feid"
+                                 loading="lazy">
+                        </figure>
+                        
+                        <div class="album-info">
+                            <h3 class="album-title">MOR, No Le Temas a la Oscuridad</h3>
+                            <p class="album-artist">Feid</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- 
+                =====================================
+                TARJETA DE ÁLBUM 8
+                FERXXO VOL X: Sagrado
+                ===================================== 
+                -->
+                <article class="album">
+                    <a href="#"
+                       onclick="window.open(
+                       'https://music.apple.com/co/album/ferxxo-vol-x-sagrado/1840970196',
+                       'AppleMusic',
+                       'width=900,height=600'
+                       ); return false;">
+                        
+                        <figure class="album-cover">
+                            <img src="img/fvx.jpg"
+                                 alt="Portada del álbum FERXXO VOL X: Sagrado de Feid"
+                                 loading="lazy">
+                        </figure>
+                        
+                        <div class="album-info">
+                            <h3 class="album-title">FERXXO VOL X: Sagrado</h3>
+                            <p class="album-artist">Feid</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- 
+                =====================================
+                TARJETA DE ÁLBUM 9
+                Do Not Disturb - Young Miko
+                ===================================== 
+                -->
+                <article class="album">
+                    <a href="#"
+                       onclick="window.open(
+                       'https://music.apple.com/co/album/do-not-disturb/1846692876',
+                       'AppleMusic',
+                       'width=900,height=600'
+                       ); return false;">
+                        
+                        <figure class="album-cover">
+                            <img src="img/dnd.jpg"
+                                 alt="Portada del álbum Do Not Disturb de Young Miko"
+                                 loading="lazy">
+                        </figure>
+                        
+                        <div class="album-info">
+                            <h3 class="album-title">Do Not Disturb</h3>
+                            <p class="album-artist">Young Miko</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- 
+                =====================================
+                TARJETA DE ÁLBUM 10
+                Trap Kitty - Young Miko
+                ===================================== 
+                -->
+                <article class="album">
+                    <a href="#"
+                       onclick="window.open(
+                       'https://music.apple.com/co/album/trap-kitty/1663588071',
+                       'AppleMusic',
+                       'width=900,height=600'
+                       ); return false;">
+                        
+                        <figure class="album-cover">
+                            <img src="img/tk.jpg"
+                                 alt="Portada del álbum Trap Kitty de Young Miko"
+                                 loading="lazy">
+                        </figure>
+                        
+                        <div class="album-info">
+                            <h3 class="album-title">Trap Kitty</h3>
+                            <p class="album-artist">Young Miko</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- 
+                =====================================
+                TARJETA DE ÁLBUM 11
+                YHLQMDLG - Bad Bunny
+                ===================================== 
+                -->
+                <article class="album">
+                    <a href="#"
+                       onclick="window.open(
+                       'https://music.apple.com/co/album/yhlqmdlg/1500776322',
+                       'AppleMusic',
+                       'width=900,height=600'
+                       ); return false;">
+                        
+                        <figure class="album-cover">
+                            <img src="img/YHLQMDLG.jpg"
+                                 alt="Portada del álbum YHLQMDLG de Bad Bunny"
+                                 loading="lazy">
+                        </figure>
+                        
+                        <div class="album-info">
+                            <h3 class="album-title">YHLQMDLG</h3>
+                            <p class="album-artist">Bad Bunny</p>
+                        </div>
+                    </a>
+                </article>
+
+            </div>
+        </section>
+    </article>
+    <!-- Fin del artículo de Álbumes -->
+
+    <!--               
+ ▄▄▄▄▄▄▄           ▄▄ 
+███▀▀▀▀▀    ▀▀     ██ 
+███▄▄ ▄█▀█▄ ██  ▄████ 
+███▀▀ ██▄█▀ ██  ██ ██ 
+███   ▀█▄▄▄ ██▄ ▀████ 
+    -->
+
+    <!-- 
+    =========================================
+    ARTÍCULO 3: FEID
+    ========================================= 
+    -->
+    <article id="feid">
+        <header>
+            <h2>Feid</h2>
+            <span aria-hidden="true">3</span>
+        </header>
+
+        <section>
+            <h3>FERXXO VOL X – Sagrado</h3>
+
+            <figure class="feid-fotos">
+                <img src="img/feid.jpg" 
+                     alt="Feid en concierto" 
+                     loading="lazy">
+            </figure>
+
+            <p>Con FERXXO VOL X: Sagrado, lanzado el 8 de junio de 2025, Feid celebra una década de trayectoria musical. Este álbum no solo recopila su evolución artística, sino que también muestra su capacidad de fusionar reguetón con sonidos experimentales y colaboraciones internacionales. Cada canción refleja un recorrido personal y profesional, consolidando a Feid como una de las voces más influyentes del género urbano.</p>
+            
+            <h4>Diez años de carrera y visión global</h4>
+            <p>El proyecto Sagrado es más que un disco: es un homenaje a los diez años de trabajo constante de Feid. Con colaboraciones que van desde Wisin hasta Ty Dolla $ign, el álbum demuestra cómo la música urbana colombiana ha trascendido fronteras. En 2026, Feid fue nominado en los Premios Grammy y Latin Grammy, destacando la fuerza de su propuesta artística y su impacto en la escena internacional. Su estilo, marcado por la autenticidad y el sello "Ferxxo", reafirma la identidad colombiana en el panorama global.</p>
+        </section>
+
+        <aside class="datos" aria-label="Datos de Feid">
+            <h2>Datos</h2>
+            
+            <!-- Dato 1: Nombre real -->
+            <div>
+                <h3 aria-hidden="true">1</h3>
+                <p class="datos-bold">Nombre:</p>
+                <p>Salomón Villada Hoyos</p>
+            </div>
+            
+            <!-- Dato 2: Nacionalidad -->
+            <div>
+                <h3 aria-hidden="true">2</h3>
+                <p class="datos-bold">Nacionalidad:</p>
+                <p>Colombiana</p>
+            </div>
+            
+            <!-- Dato 3: Fecha de nacimiento -->
+            <div>
+                <h3 aria-hidden="true">3</h3>
+                <p class="datos-bold">Nacimiento:</p>
+                <p>19 de agosto de 1992</p>
+            </div>
+            
+            <!-- Dato 4: Último álbum -->
+            <div>
+                <h3 aria-hidden="true">4</h3>
+                <p class="datos-bold">Último álbum:</p>
+                <p>FERXXO VOL X: Sagrado (2025)</p>
+            </div>
+            
+            <!-- Dato 5: Premios -->
+            <div>
+                <h3 aria-hidden="true">5</h3>
+                <p class="datos-bold">Premios:</p>
+                <p>Ganador del Latin Grammy 2024 a Mejor Interpretación de Reggaetón; nominado en los Grammy 2026 en categorías urbanas</p>
+            </div>
+        </aside>
+    </article>
+    <!-- Fin del artículo de Feid -->
+
+
+    <!--                                       
+ ▄▄▄▄▄▄▄        ▄▄                       
+███▀▀▀▀▀        ██             ▀▀        
+███        ▀▀█▄ ██ ▄█▀█▄ ████▄ ██   ▀▀█▄ 
+███  ███▀ ▄█▀██ ██ ██▄█▀ ██ ▀▀ ██  ▄█▀██ 
+▀██████▀  ▀█▄██ ██ ▀█▄▄▄ ██    ██▄ ▀█▄██ 
+    -->
+
+    <!-- 
+    =========================================
+    ARTÍCULO 4: GALERÍA
+    ========================================= 
+    -->
+    <article id="galeria">
+        <header>
+            <h2>Galería</h2>
+            <span aria-hidden="true">4</span>
+        </header>
+
+        <section>
+            
+            <!-- 
+            =====================================
+            TARJETA GALERÍA 1
+            Grammys 2026
+            ===================================== 
+            -->
+            <article>   
+                <!-- Imagen de la tarjeta -->
+                <figure>
+                    <img src="img/grammy.png" 
+                         alt="Concierto de música urbana latina" 
+                         loading="lazy">
+                </figure>
+
+                <!-- Información de la imagen -->
+                <div>
+                    <small>Grammys 2026</small>
+                    <p>Bad Bunny hace historia como el primer artista en ganar Álbum del Año con un disco completamente en español.</p>
+                </div>
+            </article>
+
+            <!-- 
+            =====================================
+            TARJETA GALERÍA 2
+            Coffee Party México - Feid
+            ===================================== 
+            -->
+            <article>   
+                <!-- Imagen de la tarjeta -->
+                <figure>
+                    <img src="img/record.jpeg" 
+                         alt="Multitud en concierto masivo" 
+                         loading="lazy">
+                </figure>
+
+                <!-- Información de la imagen -->
+                <div>
+                    <small>Récord Guinness</small>
+                    <p>Feid rompe récord mundial con el "Coffee Party" más grande del planeta en la Plaza de Toros México, reuniendo más de 50,000 personas y regalando más de 30,000 cafés en octubre de 2025.</p>
+                </div>
+            </article>
+
+            <!-- 
+            =====================================
+            TARJETA GALERÍA 3
+            Young Miko - Paris Fashion Week
+            ===================================== 
+            -->
+            <article>   
+                <!-- Imagen de la tarjeta -->
+                <figure>
+                    <img src="img/moda.jpg" 
+                         alt="Evento de moda y celebridades" 
+                         loading="lazy">
+                </figure>
+
+                <!-- Información de la imagen -->
+                <div>
+                    <small>Fashion Week 2025</small>
+                    <p>Young Miko brilla en Paris Fashion Week 2025 con Miu Miu, consolidándose como ícono de estilo y representante de la nueva generación de artistas urbanos latinos en la moda internacional.</p>
+                </div>
+            </article>
+
+        </section>
+    </article>
+    <!-- Fin del artículo de Galería -->
+
+
+    <!--
+                                                                  
+▄▄▄   ▄▄▄                           ▄▄▄      ▄▄▄                  
+███   ███                           ████▄  ▄████ ▀▀  ▄▄           
+▀███▄███▀ ▄███▄ ██ ██ ████▄ ▄████   ███▀████▀███ ██  ██ ▄█▀ ▄███▄ 
+  ▀███▀   ██ ██ ██ ██ ██ ██ ██ ██   ███  ▀▀  ███ ██  ████   ██ ██ 
+   ███    ▀███▀ ▀██▀█ ██ ██ ▀████   ███      ███ ██▄ ██ ▀█▄ ▀███▀ 
+                               ██                                 
+                             ▀▀▀                                                     
+    -->
+
+    <!-- 
+    =========================================
+    ARTÍCULO 5: YOUNG MIKO
+    ========================================= 
+    -->
+    <article id="young-miko">
+        <!-- Encabezado del artículo -->
+        <header>
+            <h2>Young Miko</h2>
+            <span aria-hidden="true">5</span>
+        </header>
+
+        <!-- Columna principal: Contenido del artículo -->
+        <section>
+            <h3>Do Not Disturb</h3>
+            <p>En noviembre de 2025, Young Miko lanzó su segundo álbum Do Not Disturb, un proyecto introspectivo que invita a desconectarse del ruido y reconectar con la paz interior. Con una estética más oscura y letras profundas, la artista puertorriqueña muestra una nueva faceta de su creatividad, explorando sonidos urbanos con influencias pop y trap latino. Este trabajo marca un punto de quiebre en su carrera, consolidándola como una de las voces más frescas y auténticas de la música latina.</p>
+
+            <!-- Foto destacada de Young Miko -->
+            <figure class="youngmiko-fotos">
+                <img src="img/youngmiko1.png" 
+                     alt="Young Miko en portada de Rolling Stone" 
+                     loading="lazy">
+            </figure>
+
+            <h4>Una nueva era para la música urbana</h4>
+            <p>Do Not Disturb no solo refleja la evolución musical de Young Miko, sino también su capacidad de conectar con una generación que busca autenticidad. En 2026, su participación en la campaña internacional por los 30 años de Pokémon reforzó su identidad cultural y su influencia en la cultura pop global. Aunque aún no ha ganado un Grammy, fue nominada en los Latin Grammy 2026 en la categoría Mejor Canción Urbana por En La City, demostrando que su propuesta artística ya tiene un lugar en la escena internacional.</p>
+        </section>
+
+        <!-- Columna derecha: Datos de la artista -->
+        <aside class="datos" aria-label="Datos de Young Miko">
+            <h2>Datos</h2>
+            
+            <!-- Dato 1: Nombre real -->
+            <div>
+                <h3 aria-hidden="true">1</h3>
+                <p class="datos-bold">Nombre:</p>
+                <p>María Victoria Ramírez de Arellano Cardona</p>
+            </div>
+            
+            <!-- Dato 2: Nacionalidad -->
+            <div>
+                <h3 aria-hidden="true">2</h3>
+                <p class="datos-bold">Nacionalidad:</p>
+                <p>Puertorriqueña</p>
+            </div>
+            
+            <!-- Dato 3: Fecha de nacimiento -->
+            <div>
+                <h3 aria-hidden="true">3</h3>
+                <p class="datos-bold">Nacimiento:</p>
+                <p>8 de noviembre de 1997, Añasco, Puerto Rico</p>
+            </div>
+            
+            <!-- Dato 4: Último álbum -->
+            <div>
+                <h3 aria-hidden="true">4</h3>
+                <p class="datos-bold">Último álbum:</p>
+                <p>Do Not Disturb (2025)</p>
+            </div>
+            
+            <!-- Dato 5: Premios -->
+            <div>
+                <h3 aria-hidden="true">5</h3>
+                <p class="datos-bold">Premios:</p>
+                <p>2 nominaciones a los Latin Grammy 2026 (incluyendo Mejor Canción Urbana)</p>
+            </div>
+        </aside>
+    </article>
+    <!-- Fin del artículo de Young Miko -->
+    
+</main>
+<!-- Fin del contenido principal -->
+
+
+<!--                                      
+ ▄▄▄▄▄▄▄                              
+███▀▀▀▀▀           ██                 
+███▄▄ ▄███▄ ▄███▄ ▀██▀▀ ▄█▀█▄ ████▄   
+███▀▀ ██ ██ ██ ██  ██   ██▄█▀ ██ ▀▀   
+███   ▀███▀ ▀███▀  ██   ▀█▄▄▄ ██                                         
+-->
+                                      
+<!-- 
+=============================================
+FOOTER
+============================================= 
+-->
+<footer>
+    <!-- Sección de suscripción -->
+    <section>
+        <h2>Únete a la comunidad</h2>
+        <p>Forma parte de nuestra comunidad y sé el primero en conocer los próximos hits, álbumes y colaboraciones del género urbano.</p>
+
+        <form class="newsletter-form" aria-label="Suscripción al newsletter">
+            <input 
+                type="email"
+                id="email"
+                name="email"
+                placeholder="tuemail@ejemplo.com"
+                required
+                aria-label="Tu correo electrónico">
+
+            <label class="checkbox">
+                <input 
+                    type="checkbox"
+                    name="terms"
+                    required>
+                Acepto recibir novedades y recomendaciones musicales
+            </label>
+
+            <button type="submit">Suscribirme</button>
+        </form>
+    </section>
+
+    <hr>
+
+    <section class="creditos">
+        <p>Webzine Musical © 2026</p>
+        <p>Proyecto integrador web — Jorman Torres</p>
+    </section>
+</footer>
+<!-- Fin del footer -->
+
+<!-- 
+=============================================
+BOTÓN FLOTANTE: VOLVER AL ÍNDICE
+============================================= 
+-->
+<a href="#Indice" class="back-to-index" aria-label="Volver al índice">
+    <span aria-hidden="true">↑</span>
+</a>
+
+<!-- Script principal de JavaScript -->
+<script src="main.js"></script>
+
+</body>
+</html>

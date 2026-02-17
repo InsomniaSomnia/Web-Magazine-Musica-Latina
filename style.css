@@ -1,0 +1,958 @@
+/* ==========================================
+   WEBZINE MÚSICA LATINA - CSS CORREGIDO
+   ========================================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+/* ==========================================
+   2. TIPOGRAFÍA
+   ========================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 2.5vw, 1.75rem);
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: clamp(1.125rem, 1.5vw, 1.25rem);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  font-family: Arial, sans-serif;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+/* ==========================================
+   3. ACCESIBILIDAD - ESTADOS DE FOCO
+   ========================================== */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #e30613;
+  outline-offset: 4px;
+}
+
+/* Evitar outline en clicks de mouse */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ==========================================
+   4. LAYOUT PRINCIPAL
+   ========================================== */
+
+/* PORTADA */
+#portada {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: #fff;
+}
+
+#portada figure {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#portada img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* MAIN CONTAINER */
+main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 3vw, 2rem);
+}
+
+/* ==========================================
+   5. ÍNDICE
+   ========================================== */
+
+#Indice {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem clamp(1rem, 3vw, 2rem);
+}
+
+#Indice header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 3px solid #000;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+#Indice header h2 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+#Indice header span {
+  font-size: clamp(4rem, 8vw, 6rem);
+  opacity: 0.1;
+  font-weight: 700;
+}
+
+#Indice nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+#Indice nav li {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+}
+
+#Indice nav li:last-child {
+  border-bottom: none;
+}
+
+#Indice nav a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 700;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+#Indice nav a:hover {
+  color: #e30613;
+  transform: translateX(8px);
+}
+
+#Indice nav a span {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  opacity: 0.3;
+  font-weight: 700;
+}
+
+/* ==========================================
+   6. ARTÍCULOS
+   ========================================== */
+
+article {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 6rem auto;
+  padding: 0 clamp(1rem, 3vw, 2rem);
+}
+
+/* Bad Bunny: 3 columnas */
+#bad-bunny {
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 2rem;
+}
+
+article > header {
+  grid-column: 1 / -1;
+  border-bottom: 3px solid #000;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+article > header h2 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+}
+
+article > header span {
+  font-size: clamp(4rem, 8vw, 6rem);
+  opacity: 0.1;
+  font-weight: 700;
+  margin-left: auto;
+}
+
+article > section {
+  grid-column: 1;
+}
+
+/* ==========================================
+   7. ASIDE - DATOS
+   ========================================== */
+
+.datos {
+  padding: 0;
+  height: fit-content;
+  grid-column: 2;
+  border: 2px solid #000;
+  background: #fff;
+}
+
+.datos h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+  text-align: center;
+  padding: 1.5rem 0;
+  border-bottom: 2px solid #000;
+  background: #f9f9f9;
+}
+
+.datos > div {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  gap: 0.5rem 1rem;
+  padding: 1.5rem 1rem;
+  border-bottom: 0.5px solid #ddd;
+  align-items: start;
+}
+
+.datos > div:last-child {
+  border-bottom: none;
+}
+
+.datos > div h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  grid-row: 1 / 3;
+  margin: 0;
+  text-align: center;
+  color: #e30613;
+}
+
+.datos-bold {
+  font-weight: 700;
+  font-family: 'Fraunces', serif;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.datos p {
+  margin: 0;
+  font-size: 0.9rem;
+  text-align: left;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   8. FOTOS DE ARTISTAS
+   ========================================== */
+
+/* Bad Bunny */
+#bad-bunny .fotos-columna {
+  grid-column: 2;
+  display: block;
+}
+
+#bad-bunny .datos {
+  grid-column: 3;
+}
+
+.badbunny-fotos {
+  width: 100%;
+  margin: 0;
+  grid-column: 2;
+}
+
+.badbunny-fotos img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Feid */
+#feid section {
+  display: block;
+}
+
+.feid-fotos {
+  float: left;
+  width: 45%;
+  margin: 0 2rem 1.5rem 0;
+}
+
+.feid-fotos img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Young Miko */
+#young-miko section {
+  display: block;
+}
+
+.youngmiko-fotos {
+  width: 100%;
+  max-width: 700px;
+  margin: 2rem 0;
+}
+
+.youngmiko-fotos img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================
+   9. ÁLBUMES 
+   ========================================== */
+
+#albumes {
+  display: block;
+  max-width: 1400px;
+  margin: 6rem auto;
+  padding: 0 clamp(1rem, 3vw, 2rem);
+  position: relative;
+}
+
+#albumes header {
+  border-bottom: 3px solid #000;
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+#albumes header h2 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+}
+
+#albumes header span {
+  font-size: clamp(4rem, 8vw, 6rem);
+  opacity: 0.1;
+  font-weight: 700;
+}
+
+/* Flechas de navegación mejoradas */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid transparent;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+  user-select: none;
+}
+
+.carousel-arrow:hover {
+  background: rgba(227, 6, 19, 0.9);
+  transform: translateY(-50%) scale(1.1);
+  border-color: #fff;
+}
+
+.carousel-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.carousel-arrow-left {
+  left: 10px;
+}
+
+.carousel-arrow-right {
+  right: 10px;
+}
+
+/* Viewport del carrusel */
+.albums-viewport {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 2rem 0;
+  margin: 0 -1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.albums-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+/* Track de álbumes */
+.albums-track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  padding: 0.5rem 0;
+}
+
+/* Tarjeta de álbum */
+.album {
+  flex: 0 0 auto;
+  width: 220px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.album:hover {
+  transform: translateY(-8px);
+}
+
+.album a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: opacity 0.2s ease;
+}
+
+.album a:hover {
+  opacity: 0.95;
+}
+
+.album-cover {
+  width: 220px;
+  height: 220px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.album:hover .album-cover {
+  box-shadow: 0 8px 24px rgba(227, 6, 19, 0.3);
+}
+
+.album-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.album:hover .album-cover img {
+  transform: scale(1.05);
+}
+
+.album-info {
+  margin-top: 1rem;
+  padding: 0 0.25rem;
+}
+
+.album-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+  color: #000;
+}
+
+.album-artist {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* ==========================================
+   10. GALERÍA
+   ========================================== */
+
+#galeria {
+  display: block;
+  max-width: 1200px;
+  margin: 6rem auto;
+  padding: 0 clamp(1rem, 3vw, 2rem);
+}
+
+#galeria header {
+  border-bottom: 3px solid #000;
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+#galeria header h2 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+}
+
+#galeria header span {
+  font-size: clamp(4rem, 8vw, 6rem);
+  opacity: 0.1;
+  font-weight: 700;
+}
+
+#galeria > section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+#galeria article {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fff;
+}
+
+#galeria article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+#galeria article figure {
+  width: 100%;
+  height: 250px;
+  margin: 0;
+  background: #f5f5f5;
+  overflow: hidden;
+}
+
+#galeria article figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+#galeria article:hover figure img {
+  transform: scale(1.05);
+}
+
+#galeria article div {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#galeria article small {
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: #e30613;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+#galeria article p {
+  font-size: 0.9rem;
+  margin: 0;
+  text-align: left;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* ==========================================
+   11. FOOTER
+   ========================================== */
+
+footer {
+  background: #000;
+  color: #fff;
+  padding: 4rem clamp(1rem, 3vw, 2rem) 2rem;
+  margin-top: 8rem;
+}
+
+footer section:first-child {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+footer h2 {
+  font-size: clamp(1.75rem, 3vw, 2rem);
+  margin-bottom: 1rem;
+}
+
+footer p {
+  color: #ccc;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.newsletter-form input[type="email"] {
+  padding: 0.75rem 1rem;
+  border: 1px solid #444;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.newsletter-form input[type="email"]:hover {
+  border-color: #666;
+}
+
+.newsletter-form input[type="email"]:focus {
+  border-color: #e30613;
+  background: #222;
+}
+
+.newsletter-form input[type="email"]::placeholder {
+  color: #666;
+}
+
+.newsletter-form .checkbox {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: #ccc;
+  cursor: pointer;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.newsletter-form .checkbox input {
+  margin-top: 0.25rem;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.newsletter-form button {
+  padding: 0.875rem 2rem;
+  background: #e30613;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Fraunces', serif;
+}
+
+.newsletter-form button:hover {
+  background: #c00510;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(227, 6, 19, 0.4);
+}
+
+.newsletter-form button:active {
+  transform: translateY(0);
+}
+
+footer hr {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 3rem auto 2rem;
+  max-width: 1200px;
+}
+
+.creditos {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #666;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.creditos p {
+  margin: 0;
+}
+
+/* ==========================================
+   12. BOTÓN FLOTANTE
+   ========================================== */
+
+.back-to-index {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  background: #e30613;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+
+.back-to-index.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.back-to-index:hover {
+  background: #c00510;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(227, 6, 19, 0.5);
+}
+
+.back-to-index:active {
+  transform: translateY(-2px);
+}
+
+.back-to-index span {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ==========================================
+   13. RESPONSIVE 
+   ========================================== */
+
+@media (max-width: 1024px) {
+  #bad-bunny {
+    grid-template-columns: 1fr;
+  }
+
+  #bad-bunny .badbunny-fotos {
+    grid-column: 1;
+    max-width: 500px;
+    margin: 2rem auto;
+  }
+
+  #bad-bunny .datos {
+    grid-column: 1;
+  }
+
+  .feid-fotos {
+    float: none;
+    width: 100%;
+    max-width: 500px;
+    margin: 2rem auto;
+  }
+}
+
+@media (max-width: 768px) {
+  article {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 3rem auto;
+  }
+
+  article > header h2 {
+    font-size: clamp(2rem, 6vw, 2.5rem);
+  }
+
+  article > header span {
+    font-size: clamp(3rem, 8vw, 4rem);
+  }
+
+  .datos {
+    grid-column: 1;
+  }
+
+  #Indice {
+    padding: 2rem 1rem;
+  }
+
+  .carousel-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .carousel-arrow-left {
+    left: 5px;
+  }
+
+  .carousel-arrow-right {
+    right: 5px;
+  }
+
+  .album {
+    width: 180px;
+  }
+
+  .album-cover {
+    width: 180px;
+    height: 180px;
+  }
+
+  .creditos {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .back-to-index {
+    width: 50px;
+    height: 50px;
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .back-to-index span {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #galeria > section {
+    grid-template-columns: 1fr;
+  }
+
+  .album {
+    width: 160px;
+  }
+
+  .album-cover {
+    width: 160px;
+    height: 160px;
+  }
+
+  .newsletter-form {
+    max-width: 100%;
+  }
+
+  main {
+    padding: 0 1rem;
+  }
+}
+
+/* ==========================================
+   14. ANIMACIONES
+   ========================================== */
+
+/* Animación Fade Up */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+article {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+article.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#Indice {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+@media print {
+  .back-to-index,
+  .carousel-arrow,
+  footer form {
+    display: none;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
